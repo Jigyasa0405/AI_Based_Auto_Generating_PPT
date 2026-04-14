@@ -146,20 +146,6 @@ The UI will open automatically at: `http://localhost:8501`
 
 ---
 
-## API Endpoints
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `POST` | `/upload/` | Upload a single file |
-| `POST` | `/upload-multiple/` | Upload multiple files |
-| `GET`  | `/generate/` | Run the AI pipeline |
-| `GET`  | `/generate/?enable_images=false` | Generate without images (faster) |
-| `GET`  | `/download/` | Download the generated `.pptx` |
-| `GET`  | `/status/` | Check upload and generation status |
-| `GET`  | `/docs` | Interactive Swagger API docs |
-
----
-
 ## Running Agents Standalone
 
 Each agent can be tested independently:
@@ -245,25 +231,6 @@ The AI automatically picks a theme based on document content. Available themes: 
 | Slide building | `python-pptx` | Open source |
 | API | FastAPI + Uvicorn | Open source |
 | UI | Streamlit | Open source |
-
----
-
-## Troubleshooting
-
-**`GROQ_API_KEY` not found**  
-Make sure you copied `.env.example` to `.env` and added your key. The `.env` file must be in the project root.
-
-**HuggingFace model download is slow**  
-This only happens on first run. The model (~130 MB) is cached at `~/.cache/huggingface/`.
-
-**Images not appearing in slides**  
-Pollinations.AI is a free public service and can occasionally be slow or unavailable. Run with `?enable_images=false` if you want to skip images for a faster generation.
-
-**`ModuleNotFoundError`**  
-Make sure your Conda/venv environment is activated and you ran `pip install -r requirements.txt`.
-
-**Symlink warning on Windows (HuggingFace)**  
-This is harmless. To suppress it, enable Developer Mode in Windows settings or run your terminal as Administrator.
 
 ---
 
